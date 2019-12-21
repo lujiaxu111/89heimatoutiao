@@ -1,22 +1,29 @@
 <template>
   <el-container>
-      <el-aside>
-          左侧
+      <el-aside style="background-color:#353b4e;min-height:100vh; width:230px" >
+          <layout-aside>
+
+          </layout-aside>
       </el-aside>
-      <el-contaier>
+      <el-container>
         <el-header>
-          头部
+          <layout-header></layout-header>
         </el-header>
-        <el-main>
-          主要区域
+        <el-main style="padding:0">
+          <router-view></router-view>
         </el-main>
-      </el-contaier>
+      </el-container>
   </el-container>
 </template>
 
 <script>
+// import layoutAside from '../../components/home/layout-aside'
+// import layoutHeader from '../../components/home/layout-header'
 export default {
-
+  components: {
+    // 'layout-aside': layoutAside,
+    // 'layout-header': layoutHeader
+  }
 }
 </script>
 

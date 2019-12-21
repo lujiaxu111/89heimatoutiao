@@ -61,8 +61,12 @@ export default {
             data: this.loginForm
           }).then(result => {
             window.localStorage.setItem('uesr_token', result.data.data.token)
-          }).catch(error => {
-            console.log(error)
+            this.$router.push('/home')
+          }).catch(() => {
+            this.$message({
+              message: '手机号或者验证码错误',
+              type: 'warning'
+            })
           })
         }
       })
